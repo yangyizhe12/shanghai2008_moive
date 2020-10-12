@@ -1,7 +1,6 @@
 <template>
     <div class="nav">
         <ul>
-            
             <router-link to="/film" active-class="active" tag="li">
                 <i class="iconfont icondianying"></i>
                 <p>影片</p>
