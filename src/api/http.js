@@ -7,11 +7,14 @@ axios.interceptors.request.use(
     function(config){
         let host = "mall.film-ticket.film.list";
         let info = config.headers.info;
-        if("info" == info){
+        if( info == "info" ){
             host = 'mall.film-ticket.film.info'
         }
-        if("cinema" == info){
+        if( info == "cinema"){
             host = 'mall.film-ticket.cinema.list'
+        }
+        if( info == "city"){
+            host = 'mall.film-ticket.city.list'
         }
         config.headers = {
             "X-Client-Info":

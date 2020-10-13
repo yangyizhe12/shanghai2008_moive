@@ -8,3 +8,4 @@ export const comingSoonListUri =
 //详情页面
 export const moiveDetailUri = "/gateway?k=4691730&filmId=";
 
+export const cityListUri = "/gateway?k=2289937";
