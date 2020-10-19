@@ -16,15 +16,23 @@ axios.interceptors.request.use(
         if( info == "city"){
             host = 'mall.film-ticket.city.list'
         }
-        config.headers = {
+
+        if(config.headers.authorization){
+            config.headers = {
+                authorization :config.headers.authorization
+            }
+        }else{
+            config.headers = {
             "X-Client-Info":
             '{"a":"3000","ch":"1002","v":"5.0.4","e":"16022367182884122078871554","bc":"310100"}',
             "X-Host":host,
         }
+        }
+        
         return config;
     },
     function(error){
-        // return Promise.reject(error)
+        return Promise.reject(error)
     }
 );
 

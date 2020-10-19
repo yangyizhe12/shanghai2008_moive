@@ -1,14 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+Vue.use(VueRouter)
+
 import centerRouter from "@/router/routes/center";
 import cinemaRouter from './routes/cinema';
 import filmRouter   from './routes/film';
 import detailRouter from './routes/detail';
-import cityRouter from './routes/city'
+import cityRouter   from './routes/city';
+import vuexRouter   from './routes/vuex';
+import authRouter   from './routes/auth';
 
 
-Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
@@ -20,6 +23,9 @@ const routes = [
   filmRouter,
   detailRouter,  
   cityRouter,
+  vuexRouter,
+  ...authRouter,
+  
 ]
 
 const router = new VueRouter({

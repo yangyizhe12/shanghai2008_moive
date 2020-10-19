@@ -6,6 +6,13 @@ export const comingSoonListUri =
     "/gateway?cityId=310100&pageSize=30&type=2&k=5155219&pageNum=";
 
 //详情页面
-export const moiveDetailUri = "/gateway?k=4691730&filmId=";
+export const moiveDetailUri    = "/gateway?k=4691730&filmId=";
 
-export const cityListUri = "/gateway?k=2289937";
+//城市列表
+export const cityListUri       = "/gateway?k=2289937";
+
+//登录接口
+export const loginUrl          = "http://127.0.0.1:3000/api/v1/login";
+//用户登录接口
+export const centerUrl         = "http://127.0.0.1:3000/api/v1/user_info"
+

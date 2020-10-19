@@ -10,7 +10,7 @@
 .box {
     width: 100%;
     position: fixed;
-    top: 50px;
+    top: 80px;
     left: 0;
     bottom: 50px;
     background-color: #fdfaf5;

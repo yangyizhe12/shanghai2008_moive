@@ -90,7 +90,7 @@ export default {
         },
     },
     mounted(){
-        this.height = document.documentElement.clientHeight - 100
+        this.height = document.documentElement.clientHeight - 142
         // console.log(this.height)
         
     },
