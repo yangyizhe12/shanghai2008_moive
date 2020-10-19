@@ -5,7 +5,9 @@ import {
     moiveDetailUri,
     cityListUri,
     loginUrl,
-    centerUrl
+    centerUrl,
+    cinemaUrl,
+
 } from '../config/url'
 //正在上映
 export const nowPlayingListData = (pageNum) =>{
@@ -78,3 +80,8 @@ export const userInfo = (_token)=>{
     return http.get(centerUrl)
 }
 
+export const cinemaListData = ()=>{
+    http.defaults.headers.info = "cinema";
+    http.defaults.headers.authorization = "";
+    return http.get(cinemaUrl)
+}

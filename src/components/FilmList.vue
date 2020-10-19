@@ -50,6 +50,7 @@ export default {
         Loading
     },
     created(){
+        
         this.data = this.list
         if(this.data.length > 0){
             this.loading = false

@@ -2,7 +2,7 @@
     <div>
         <div class="titleTop">
             <div class="ListTop">
-                <router-link to="/City" tag="span">{{city}}</router-link> 
+                <router-link to="/City" tag="span">{{cityName}}</router-link> 
             </div> 
             <span class="word">电影列表</span>
         </div>      
@@ -19,10 +19,11 @@
     </div>
 </template>
 <script>
+import cityName from '../views/city/City'
 export default {
     data(){
         return{
-            city:"个",
+            cityName:"",
         }
     },
     mounted:function(){

@@ -62,6 +62,8 @@ export default {
     async mounted() {
         let ret = await moiveDetailData(this.$route.params.filmId);
         this.film = ret.data.data.film;
+        console.log(ret)
+        console.log(this.film)
     },
     filters: {
         parsePremiereAt: function(value){

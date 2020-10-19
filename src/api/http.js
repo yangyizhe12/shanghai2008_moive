@@ -17,6 +17,7 @@ axios.interceptors.request.use(
             host = 'mall.film-ticket.city.list'
         }
 
+
         if(config.headers.authorization){
             config.headers = {
                 authorization :config.headers.authorization

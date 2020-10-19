@@ -16,3 +16,7 @@ export const loginUrl          = "http://127.0.0.1:3000/api/v1/login";
 //用户登录接口
 export const centerUrl         = "http://127.0.0.1:3000/api/v1/user_info"
 
+//影院列表
+export const cinemaUrl         = "/gateway?cityId=310100&k=2169536&ticketFlag=1"
+
+                                                            
