@@ -7,6 +7,7 @@ export default new Vuex.Store({
     state:{
         city:'',
         _token: "",
+        
     },
     mutations: {
         updateToken: function(state, _token) {

@@ -22,6 +22,10 @@ export default {
     async mounted(){
         let ret = await nowPlayingListData(this.page);
         this.list = ret.data.data.films;
-    }
+    },
+    // cinemaDetail: function(filmsId) {
+    //     this.$router.push({ name: "cinemaDetailList", params:  {filmsId}  });
+    //     console.log(filmsId)
+    // }
 }
 </script>

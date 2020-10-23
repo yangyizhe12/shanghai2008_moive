@@ -7,6 +7,8 @@ import {
     loginUrl,
     centerUrl,
     cinemaUrl,
+    cinemaDetailUrl,
+    cinemaDetailListUrl,
 
 } from '../config/url'
 //正在上映
@@ -26,6 +28,28 @@ export const moiveDetailData = (filmId) =>{
     http.defaults.headers.authorization = "";
     return http.get(moiveDetailUri + filmId);
 }
+
+//影院列表
+export const cinemaListData = ()=>{
+    http.defaults.headers.info = "cinema";
+    http.defaults.headers.authorization = "";
+    return http.get(cinemaUrl)
+}
+
+//影院详情
+export const cinemaDetailData = (cinemaId)=>{
+    http.defaults.headers.info = "cinemaIds" ;
+    http.defaults.headers.authorization = "";
+    return http.get(cinemaDetailUrl +cinemaId)
+}
+//影院电影信息
+export const cinemaDetailList = (cinemaId)=>{
+    http.defaults.headers.info = "films";
+    http.defaults.headers.authorization = "";
+    return http.get(cinemaDetailListUrl + cinemaId )
+}
+
+
 //地址
 export const cityListData = async ()=>{
     http.defaults.headers.info = "city";
@@ -60,10 +84,8 @@ export const cityListData = async ()=>{
 }
 //登录
 export const loginList = (data)=>{
-
     return http.post(loginUrl,data)
 }
-
 
 //获取用户登录
 export const userInfo = (_token)=>{
@@ -78,10 +100,4 @@ export const userInfo = (_token)=>{
     });
 
     return http.get(centerUrl)
-}
-
-export const cinemaListData = ()=>{
-    http.defaults.headers.info = "cinema";
-    http.defaults.headers.authorization = "";
-    return http.get(cinemaUrl)
 }

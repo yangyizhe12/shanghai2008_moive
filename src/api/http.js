@@ -16,6 +16,14 @@ axios.interceptors.request.use(
         if( info == "city"){
             host = 'mall.film-ticket.city.list'
         }
+        
+        if( info == "cinemaIds"){
+            host = 'mall.film-ticket.cinema.info'
+        }
+
+        if( info == "films"){
+            host = 'mall.film-ticket.film.cinema-show-film'
+        }
 
 
         if(config.headers.authorization){
@@ -30,6 +38,8 @@ axios.interceptors.request.use(
         }
         }
         
+
+
         return config;
     },
     function(error){

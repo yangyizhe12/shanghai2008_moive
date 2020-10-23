@@ -10,7 +10,7 @@ import detailRouter from './routes/detail';
 import cityRouter   from './routes/city';
 import vuexRouter   from './routes/vuex';
 import authRouter   from './routes/auth';
-
+import cinemaDetailRouter from './routes/cinemaDetail';
 
 const routes = [
   {
@@ -25,6 +25,7 @@ const routes = [
   cityRouter,
   vuexRouter,
   ...authRouter,
+  cinemaDetailRouter
   
 ]
 

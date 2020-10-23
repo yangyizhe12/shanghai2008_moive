@@ -3,6 +3,8 @@
         <div class="titleTop">
             <div class="ListTop">
                 <router-link to="/City" tag="span">{{cityName}}</router-link> 
+                
+                <!-- this.$store.state.city -->
             </div> 
             <span class="word">电影列表</span>
         </div>      
@@ -19,29 +21,46 @@
     </div>
 </template>
 <script>
-import cityName from '../views/city/City'
+import $ from 'jquery';
+import cityName from '../views/city/City';
+
 export default {
     data(){
         return{
-            cityName:"",
+            cityName:{},
         }
     },
-    mounted:function(){
-        // this.createcode()
-        // this.showPosition(position)
+    mounted(){
+        this.getXy();
     },
+    
     methods: {
-        // createcode : function() {
-        //     if (navigator.geolocation){
-        //     navigator.geolocation.getCurrentPosition(showPosition);
-        //     }else{
-        //     x.innerHTML="Geolocation is not supported by this browser.";
-        //     }
-        // },showPosition: 
-        // function (position){
-        //     x.innerHTML="Latitude: " + position.coords.latitude + "<br />Longitude: " + position.coords.longitude;
-        // }
-    },
+        getXy: function () {
+            var localtion={};
+            // 通过百度api获得经纬度
+            $.getJSON("https://api.map.baidu.com/location/ip?callback=?", {
+                'ak' : 'lApvxfMWyOB9So5CZUOupRGg7wLYlbGx',
+                'coor' : 'bd09ll',
+                'ip' : localtion.ip
+            },(data) => {
+                localtion.address = data.content.address //位置
+                // this.cityName = JSON.stringify(data.content)
+                    // this.cityName = localtion.address
+                // console.log(this)
+                // console.log( this.cityName)
+                // console.log(localtion.point)
+                console.log(this.$store.state.city)
+                if(this.$store.state.city == '' ){
+                    this.cityName = localtion.address
+                    this.$store.state.city = this.cityName       
+                }else{
+                    this.cityName = this.$store.state.city               
+                }
+            });
+        },
+    }
+    
+    
 }
 </script>
 <style lang="scss" scoped>

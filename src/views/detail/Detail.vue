@@ -1,5 +1,4 @@
 <template>
-    
     <div>
         <div class="film-header">
             <div class="goBack" @click="goBack()">
@@ -8,10 +7,8 @@
                     alt=""
                 />
             </div>
-            <div class="title">我和我的家乡</div>
-            <!---->
         </div>
-        <div class="detail">
+        <div class="detail">    
             <div class="img">
                 <img v-lazy="film.poster" />
             </div>
